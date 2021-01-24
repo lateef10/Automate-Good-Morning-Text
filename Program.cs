@@ -8,7 +8,7 @@ using Quartz.Impl;
 using Quartz.Logging;
 namespace TwilioAPIs
 {
-    public class Program
+    class Program
     {
         private static async Task Main(string[] args)
         {
@@ -57,16 +57,19 @@ namespace TwilioAPIs
             int luckyNum = rnd.Next(0, msgList.Length);
             string msgOfTheDay = msgList[luckyNum];
 
-            const string accountSid = "ggg";
-            const string authToken = "ggg";
+            const string accountSid = "your sid";
+            const string authToken = "your authToken";
 
             TwilioClient.Init(accountSid, authToken);
 
             var message = await MessageResource.CreateAsync(
                 body: msgOfTheDay,
-                from: new Twilio.Types.PhoneNumber("+ggg"),
-                to: new Twilio.Types.PhoneNumber("+ggg")
+                from: new Twilio.Types.PhoneNumber("+1225*****"),
+                to: new Twilio.Types.PhoneNumber("+1409******")
             );
+
+            //Console.WriteLine(message.Sid);
+            //Console.ReadLine();
         }
     }
 }
