@@ -57,15 +57,15 @@ namespace TwilioAPIs
             int luckyNum = rnd.Next(0, msgList.Length);
             string msgOfTheDay = msgList[luckyNum];
 
-            const string accountSid = "your sid";
-            const string authToken = "your authToken";
+            const string accountSid = "ggg";
+            const string authToken = "ggg";
 
             TwilioClient.Init(accountSid, authToken);
 
             var message = await MessageResource.CreateAsync(
                 body: msgOfTheDay,
-                from: new Twilio.Types.PhoneNumber("+1225*****"),
-                to: new Twilio.Types.PhoneNumber("+1409******")
+                from: new Twilio.Types.PhoneNumber("+ggg"),
+                to: new Twilio.Types.PhoneNumber("+ggg")
             );
         }
     }
