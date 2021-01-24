@@ -8,26 +8,7 @@ using Quartz.Impl;
 using Quartz.Logging;
 namespace TwilioAPIs
 {
-    /*class Program
-    {
-        static void Main(string[] args)
-        {
-            const string accountSid = "ACe908ecf65ec9b3ba4ccbbc7ebdb42ee0";
-            const string authToken = "a0843f89819c51a6868a17afa1983be5";
-
-            TwilioClient.Init(accountSid, authToken);
-
-            var message = MessageResource.Create(
-                body: "Test from C#",
-                from: new Twilio.Types.PhoneNumber("+12249932246"),
-                to: new Twilio.Types.PhoneNumber("+14092257749")
-            );
-
-            Console.WriteLine(message.Sid);
-            Console.ReadLine();
-        }
-    }*/
-    class Program
+    public class Program
     {
         private static async Task Main(string[] args)
         {
@@ -76,19 +57,16 @@ namespace TwilioAPIs
             int luckyNum = rnd.Next(0, msgList.Length);
             string msgOfTheDay = msgList[luckyNum];
 
-            const string accountSid = "dsdsd";
-            const string authToken = "3434";
+            const string accountSid = "your sid";
+            const string authToken = "your authToken";
 
             TwilioClient.Init(accountSid, authToken);
 
             var message = await MessageResource.CreateAsync(
                 body: msgOfTheDay,
-                from: new Twilio.Types.PhoneNumber("+8980"),
-                to: new Twilio.Types.PhoneNumber("+tffffg")
+                from: new Twilio.Types.PhoneNumber("+1225*****"),
+                to: new Twilio.Types.PhoneNumber("+1409******")
             );
-
-            //Console.WriteLine(message.Sid);
-            //Console.ReadLine();
         }
     }
 }
